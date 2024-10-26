@@ -1,2 +1,11 @@
 streamlit
 pillow
+numpy
+numpy_and_numpy_base_1708638620867
+pandas
+pandas_1718308972393
+pydeck
+Pygments
+PySocks
+urllib3
+widgetsnbextension
