@@ -1,3 +1,3 @@
 import streamlit as st
 
-st.title('Uber pickups in NYC')
+st.title('Berlin Open Science Platform')
