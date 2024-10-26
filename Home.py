@@ -25,3 +25,4 @@ with col3:
 with col4:
    st.image("https://www.wuv.de/var/wuv/storage/images/werben-verkaufen/themen/tech/kreation-mit-ki-zoff-um-neues-logo-der-fu-berlin/10458335-2-ger-DE/Kreation-mit-KI-Zoff-um-neues-Logo-der-FU-Berlin3_reference.jpg", caption="Refubium")
 
+URL = st.text_input('Link', value="...")
