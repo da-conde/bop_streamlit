@@ -6,7 +6,7 @@ from PIL import Image
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science Platform')
+st.title('Berlin Open Science PlatformNow')
 
 st.divider()
 
@@ -26,3 +26,10 @@ with col4:
    st.image("https://www.wuv.de/var/wuv/storage/images/werben-verkaufen/themen/tech/kreation-mit-ki-zoff-um-neues-logo-der-fu-berlin/10458335-2-ger-DE/Kreation-mit-KI-Zoff-um-neues-Logo-der-FU-Berlin3_reference.jpg", caption="Refubium")
 
 URL = st.text_input('Link', value="...")
+
+check_refubium = URL[8:16]
+
+check_refubium = 'refubium'
+check_depositonce = 'depositonce'
+check_edoc = 'edoc'
+check_tu = "tu.berlin"
