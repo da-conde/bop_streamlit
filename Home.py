@@ -12,7 +12,7 @@ from pandas.api.types import (
     is_numeric_dtype,
     is_object_dtype,
 )
-#from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
+from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 #from bs4 import BeautifulSoup
 #import pybase64
 
