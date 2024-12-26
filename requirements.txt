@@ -3,8 +3,8 @@ pillow
 pandas
 numpy
 streamlit_pandas_profiling
-ydata_profiling
-#pandas.api.types
+#ydata_profiling
+pandas.api.types
 #pygwalker.api.streamlit
 #bs4
 #pybase64
