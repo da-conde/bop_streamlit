@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 from streamlit_pandas_profiling import st_profile_report 
-from ydata_profiling import ProfileReport
+#from ydata_profiling import ProfileReport
 #import matplotlib.pyplot as plt
 
 import numpy as np
@@ -27,7 +27,7 @@ import numpy as np
 #image = Image.open('bua.jpeg')
 #st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinalXYTTT')
+st.title('Berlin Open Science PlatformNowFinal')
 
 #st.divider()
 
