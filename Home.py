@@ -6,7 +6,7 @@ from PIL import Image
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinalXY')
+st.title('Berlin Open Science PlatformNowFinalXYTTT')
 
 st.divider()
 
