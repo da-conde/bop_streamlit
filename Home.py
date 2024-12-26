@@ -6,12 +6,12 @@ from streamlit_pandas_profiling import st_profile_report
 
 import numpy as np
 #import base64
-from pandas.api.types import (
-    is_categorical_dtype,
-    is_datetime64_any_dtype,
-    is_numeric_dtype,
-    is_object_dtype,
-)
+#from pandas.api.types import (
+    #is_categorical_dtype,
+    #is_datetime64_any_dtype,
+    #is_numeric_dtype,
+    #is_object_dtype,
+#)
 #from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 #from bs4 import BeautifulSoup
 #import pybase64
