@@ -2,3 +2,4 @@ streamlit
 pillow
 pandas
 numpy
+streamlit_pandas_profiling
