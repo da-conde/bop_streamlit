@@ -1,5 +1,17 @@
 import streamlit as st
 from PIL import Image
+from streamlit_pandas_profiling import st_profile_report 
+from ydata_profiling import ProfileReport
+import matplotlib.pyplot as plt
+st.set_option('deprecation.showPyplotGlobalUse', False)
+import numpy as np
+import base64
+
+
+
+
+
+from functions import scraping_refubium
 
 
 
@@ -33,3 +45,10 @@ check_refubium = 'refubium'
 check_depositonce = 'depositonce'
 check_edoc = 'edoc'
 check_tu = "tu.berlin"
+
+
+if check_refubium in URL.lower():
+   files = scraping_refubium(URL)
+   file_section = st.selectbox(
+        'Choose File',
+        files.Titel.unique(),index=None)
