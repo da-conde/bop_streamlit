@@ -4,7 +4,6 @@ pandas
 numpy
 streamlit_pandas_profiling
 ydata_profiling
-matplotlib.pyplot
 base64
 pandas.api.types
 pygwalker.api.streamlit
