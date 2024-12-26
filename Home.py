@@ -5,7 +5,7 @@ from ydata_profiling import ProfileReport
 #import matplotlib.pyplot as plt
 st.set_option('deprecation.showPyplotGlobalUse', False)
 import numpy as np
-import base64
+#import base64
 from pandas.api.types import (
     is_categorical_dtype,
     is_datetime64_any_dtype,

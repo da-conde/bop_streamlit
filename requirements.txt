@@ -8,3 +8,4 @@ base64
 pandas.api.types
 pygwalker.api.streamlit
 bs4
+pybase64
