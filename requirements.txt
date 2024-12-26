@@ -2,7 +2,7 @@ streamlit
 pillow
 pandas
 numpy
-#streamlit_pandas_profiling
+streamlit_pandas_profiling
 #ydata_profiling
 #pandas.api.types
 #pygwalker.api.streamlit
