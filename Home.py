@@ -25,7 +25,7 @@ import numpy as np
 #image = Image.open('bua.jpeg')
 #st.image(image)
 
-#st.title('Berlin Open Science PlatformNowFinalXYTTT')
+st.title('Berlin Open Science PlatformNowFinalXYTTT')
 
 #st.divider()
 
