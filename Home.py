@@ -20,7 +20,7 @@ from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 
 
 
-#from functions import scraping_refubium
+from functions import scraping_refubium
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 

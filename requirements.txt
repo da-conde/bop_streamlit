@@ -6,5 +6,5 @@ streamlit_pandas_profiling
 #ydata_profiling
 #pygwalker.api.streamlit
 pygwalker
-#bs4
+bs4
 #pybase64

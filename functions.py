@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import base64
+#import base64
 from pandas.api.types import (
     is_categorical_dtype,
     is_datetime64_any_dtype,
@@ -8,12 +8,12 @@ from pandas.api.types import (
     is_object_dtype,
 )
 
-import fitz
+#import fitz
 from bs4 import BeautifulSoup
 import requests
 from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 from streamlit_ydata_profiling import st_profile_report
-from ydata_profiling import ProfileReport
+#from ydata_profiling import ProfileReport
 
 
 
