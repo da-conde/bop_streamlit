@@ -22,7 +22,7 @@ from bs4 import BeautifulSoup
 
 from functions import scraping_refubium
 
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 image = Image.open('bua.jpeg')
 st.image(image)
