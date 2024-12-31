@@ -46,17 +46,18 @@ with col3:
 with col4:
    st.image("https://www.wuv.de/var/wuv/storage/images/werben-verkaufen/themen/tech/kreation-mit-ki-zoff-um-neues-logo-der-fu-berlin/10458335-2-ger-DE/Kreation-mit-KI-Zoff-um-neues-Logo-der-FU-Berlin3_reference.jpg", caption="Refubium")
 
-#URL = st.text_input('Link', value="...")
+URL = st.text_input('Link', value="...")
 
-#check_refubium = URL[8:16]
+check_refubium = URL[8:16]
 
-#check_refubium = 'refubium'
-#check_depositonce = 'depositonce'
-#check_edoc = 'edoc'
-#check_tu = "tu.berlin"
+check_refubium = 'refubium'
+check_depositonce = 'depositonce'
+check_edoc = 'edoc'
+check_tu = "tu.berlin"
 
 
-#if check_refubium in URL.lower():
+if check_refubium in URL.lower():
+    st.write("Yes")
    #files = scraping_refubium(URL)
    #file_section = st.selectbox(
         #'Choose File',
