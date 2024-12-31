@@ -4,7 +4,8 @@ pandas
 numpy
 streamlit_pandas_profiling
 streamlit_ydata_profiling
-ydata-profiling
+#ydata-profiling
+ydata-profiling-4.8.3
 #pygwalker.api.streamlit
 pygwalker
 bs4
