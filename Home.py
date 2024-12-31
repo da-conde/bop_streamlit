@@ -13,7 +13,7 @@ from pandas.api.types import (
     is_object_dtype,
 )
 from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
-#from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 #import pybase64
 
 

@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 import requests
 from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 from streamlit_ydata_profiling import st_profile_report
-#from ydata_profiling import ProfileReport
+from ydata_profiling import ProfileReport
 
 
 
