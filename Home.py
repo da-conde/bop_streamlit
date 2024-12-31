@@ -27,7 +27,7 @@ from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 #image = Image.open('bua.jpeg')
 #st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinal')
+st.title('Berlin Open Science PlatformNowFinalAA')
 
 #st.divider()
 
