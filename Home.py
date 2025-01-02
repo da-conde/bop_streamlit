@@ -25,6 +25,7 @@ from functions import scraping_deposit
 from functions import scraping_edoc
 from functions import scraping_tu_repo
 from functions import csv
+from functions import excel
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 

@@ -195,3 +195,30 @@ def csv(link):
 
     with tab4:
         st.write("tbd")
+
+
+def excel(link):
+    tab1, tab2, tab3, tab4= st.tabs(["Preview", "Visualization", "Data Report", "Summary"])
+
+    with tab1: #Preview
+        df = pd.read_excel(link) 
+        st.dataframe(df)
+        new = files[['Header', 'Author', 'Year' , 'Abstract' , 'Department' , 'Language']].copy().transpose()
+        st.dataframe(new, hide_index=None)
+
+    with tab2: #Visualization
+        init_streamlit_comm()
+        def get_pyg_renderer() -> "StreamlitRenderer":
+            df = pd.read_excel(link) 
+            return StreamlitRenderer(df, spec="./gw_config.json", debug=False)
+        renderer = get_pyg_renderer()
+        renderer.render_explore()
+
+    with tab3:
+        st.write("Profilereport fehlt")
+        #df = pd.read_excel(link) 
+        #pr = ProfileReport(df, minimal=True, orange_mode=True, explorative=True)
+        #st_profile_report(pr, navbar=True)
+
+    with tab4:
+        st.write("tbd")
