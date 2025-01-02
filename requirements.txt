@@ -12,4 +12,5 @@ openpyxl
 pybase64
 pathlib
 requests
+streamlit_pdf_viewer
 #base64

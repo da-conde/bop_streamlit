@@ -15,6 +15,7 @@ from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 from streamlit_ydata_profiling import st_profile_report
 import base64
 import pybase64
+from streamlit_pdf_viewer import pdf_viewer
 #from ydata_profiling import ProfileReport
 
 
@@ -279,7 +280,8 @@ def pdf(link):
                     #file_name="paper.pdf",
                     file_name="paper.pdf",
                     mime="application/octet-stream")
-                    displayPDF('paper.pdf') 
+                    #displayPDF('paper.pdf') 
+                    pdf_viewer("paper.pdf")
         with tab2:
             st.write("tab2 kommt noch")
 
