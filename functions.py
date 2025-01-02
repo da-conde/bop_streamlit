@@ -245,3 +245,72 @@ def txt(link):
 
     with tab4:
         st.write("tab4 tbd.")
+
+
+def pdf(link):
+    tab1, tab2, tab3, tab4= st.tabs(["Preview", "Visualization", "Data Report", "Summary"])
+
+    with tab1: #Preview
+        from pathlib import Path
+        import requests
+        filename = Path('paper.pdf')
+        url = link
+        response = requests.get(url)
+        filename.write_bytes(response.content)  
+
+        with open("paper.pdf", "rb") as file:
+                    btn=st.download_button(
+                    label="Download pdf",
+                    data=file,
+                    #file_name="paper.pdf",
+                    file_name="paper.pdf",
+                    mime="application/octet-stream")
+                    displayPDF('paper.pdf') 
+        with tab2:
+            st.write("tab2 kommt noch")
+
+        with tab3:
+            st.write("tab3 kommt noch")
+
+        with tab4:
+            st.write("tab3 kommt noch")
+            
+            #lang_select = st.selectbox('Select Language for summary',('German', 'English', 'Spanish'), index=None)
+            #question_select = st.selectbox('Select Question for summary',('German', 'English', 'Spanish'), index=None)
+            
+            #col1, col2, col3 = st.columns([3, 1, 1])
+
+            #with col1:
+                #question_select = st.selectbox('Select Question',('Erstelle eine Summary', 'Beschreibe das Fachgebiet', 'Nenne Keyfacts des Textes',
+                #"Fasse die Introduction zusammen", "Fasse die Methodik zusammen", "Fasse die Results zusammen", "Fasse die Diskussion zusammen"), index=None)
+                
+
+            #with col2:
+                #lang_select = st.selectbox('Select Language',('German', 'English', 'Spanish'), index=None)
+
+            #with col3:
+                #detail_select = st.selectbox('Select Detail',('100 Words', '200 Words', '500 Words'), index=None)
+
+            #if lang_select != "None" and question_select != "None" and detail_select != "None" :
+                #doc = fitz.open('paper.pdf')
+                #text = "" 
+                #for page in doc:
+                    #text+=page.get_text() 
+                    #st.write(text)
+                    #frage = "Beschreibe in maximal 100 Wörtern in welchem Fachgebiet bzw. welcher Domäne sich der Text verorten lässt"
+                    #frage = "Erstelle mir eine Zusammenfassung des folgenden Text in der Sprache"
+                    #messages = [{"role": "system", "content": "You are a Professor"}]
+                #if lang_select != None and question_select != None and detail_select != None:
+                    #messages.append({"role": "user", "content":frage + lang_select + text})
+                    
+                    #messages.append({"role": "user", "content":frage + lang_select + text})
+
+
+                    #messages.append({"role": "user", "content":question_select + " in maximal " + detail_select + " in der Sprache " + lang_select + text})
+
+
+
+                    #answers = client.chat.completions.create(model="gpt-4-0125-preview",messages=messages)
+                    #st.write(answers.choices[0].message.content)
+                #else:
+                    #st.write("Hier kannst du ein LLM nutzen")

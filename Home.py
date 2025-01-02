@@ -25,6 +25,7 @@ from functions import scraping_tu_repo
 from functions import csv
 from functions import excel
 from functions import txt
+from functions import pdf
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
