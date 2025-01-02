@@ -24,7 +24,7 @@ def displayPDF(file):
           with open(file, "rb") as f:
                base64_pdf = pybase64.b64encode(f.read()).decode('utf-8')
      
-               pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+               pdf_display = F'<iframe src="data:application/pdf;pybase64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
 
           
      # Displaying File
