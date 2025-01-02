@@ -21,6 +21,10 @@ from bs4 import BeautifulSoup
 
 
 from functions import scraping_refubium
+from functions import scraping_deposit
+from functions import scraping_edoc
+from functions import scraping_tu_repo
+from functions import csv
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 

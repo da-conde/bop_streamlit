@@ -77,34 +77,121 @@ def scraping_refubium(link):
 
 
 
-    col1, col2, col3 = st.columns([3, 1, 1])
-    with col1:
-        st.subheader("Title")
+    #col1, col2, col3 = st.columns([3, 1, 1])
+    #with col1:
+        #st.subheader("Title")
     
-    with col2:
-        st.subheader("Format")
+    #with col2:
+        #st.subheader("Format")
 
-    with col3:
-        st.subheader("Action")
+    #with col3:
+        #st.subheader("Action")
 
-    for index, row in df.iterrows():
-        col1, col2, col3 = st.columns([3, 1, 1])
-        with col1:
-            st.write(row['Titel'])
+    #for index, row in df.iterrows():
+        #col1, col2, col3 = st.columns([3, 1, 1])
+        #with col1:
+            #st.write(row['Titel'])
             
-        with col2:
-            st.write(row['Format'])
+        #with col2:
+            #st.write(row['Format'])
 
-        with col3:
-            if st.button("Bearbeiten", type="primary", key=index-1):
-                st.write(row['Link']) 
+        #with col3:
+            #if st.button("Bearbeiten", type="primary", key=index-1):
+                #st.write(row['Link']) 
           
-        #with col4:
+       # with col4:
             #if st.button("Download", type="primary", key=index+index):
                 #st.write(row['Link']) 
         
         
                 
             
-        st.divider()
+        #st.divider()
     return df
+
+def scraping_deposit(link):
+    page = requests.get(link)
+    soup = BeautifulSoup(page.content, "html.parser")
+    big_container = soup.find("div", class_="list-group")
+    items_box = big_container.find_all("a", class_="list-group-item list-group-item-action")
+    data = {}
+    deposit_once_url = "https://api-depositonce.tu-berlin.de/server/api/core"
+    for count, file in enumerate(items_box):
+        name = file.find("h5").getText()
+        file_format = name.rpartition('.')[2]
+        file_url = file.get('href')
+        complete_file_url = deposit_once_url + file_url[:-8] + "content"
+        data[count+1] = {"Titel": name, "Link": complete_file_url, "Format": file_format}
+        df = pd.DataFrame.from_dict(data).transpose()
+    st.write(df)
+    
+    return df
+
+def scraping_edoc(link):
+    page = requests.get(link)
+    soup = BeautifulSoup(page.content, "html.parser")
+    big_container = soup.find("div", class_="col-xs-12 col-sm-12 col-md-9 main-content")
+    items_section = big_container.find("div", class_="item-page-field-wrapper file-section word-break ds-artifact-list")
+    items = items_section.find_all("div", class_="ds-artifact-item")
+    items_box = items_section.find_all("div", class_="ds-artifact-item")
+    header = big_container.find("div", class_="simple-item-view-title item-page-field-wrapper").getText()
+    author = big_container.find("div", class_="simple-item-view-authors item-page-field-wrapper h4").getText().replace('\n', ' ').replace('\r', '')[2:-2]
+    abstract = big_container.find("div", class_="simple-item-view-description item-page-field-wrapper table").getText()
+
+    data = {}
+    edoc_url = "https://edoc.hu-berlin.de"
+    for count, file in enumerate(items_box):
+        titel = file.find("div", class_="file-title").getText()
+        format = titel.split('.')[1].split(' ')[0]
+        url_box_extract = file.find('a')
+        file_url = url_box_extract.get('href')
+        complete_file_url = edoc_url + file_url
+        data[count+1] = {"Format":format, "Titel":titel, "Link": complete_file_url, "Header": "X",
+                         "Author": author, "Year" : "X", "Abstract":"X", "Department":"X", "Language":"X"}
+        df = pd.DataFrame.from_dict(data).transpose()
+    st.write(df)
+    return df
+
+def scraping_tu_repo(link):
+    page = requests.get(link)
+    soup = BeautifulSoup(page.content, "html.parser")
+    rows = []
+    for row in soup.find_all('tr'):
+        cols = row.find_all('td')
+        cols = [ele.text.strip() for ele in cols]
+        rows.append(cols)
+    
+    df = pd.DataFrame(rows, columns=['Attribut', 'Wert'])
+    df = df.set_index("Attribut")
+    url_string = df.loc["Datei/URL"][0]
+    format_string = url_string.rsplit('.', 1 )[1]
+    df = df.reset_index()
+    df.loc[len(df.index)] = ["Format",format_string] 
+    df = df.set_index("Attribut")
+    
+    return df
+
+def csv(link):
+    tab1, tab2, tab3, tab4= st.tabs(["Preview", "Visualization", "Data Report", "Summary"])
+
+    with tab1: #Preview
+        df = pd.read_csv(link, delimiter=',', encoding = "ISO-8859-1") 
+        st.dataframe(df)
+        #new = files[['Header', 'Author', 'Year' , 'Abstract' , 'Department' , 'Language']].copy().transpose()
+        #st.dataframe(new, hide_index=None)
+
+    with tab2: #Visualization
+        init_streamlit_comm()
+        def get_pyg_renderer() -> "StreamlitRenderer":
+            df = pd.read_csv(link, delimiter=',', encoding = "ISO-8859-1") 
+            return StreamlitRenderer(df, spec="./gw_config.json", debug=False)
+        renderer = get_pyg_renderer()
+        renderer.render_explore()
+
+    with tab3:
+        df = pd.read_csv(link, delimiter=',', encoding = "ISO-8859-1") 
+        pr = ProfileReport(df, minimal=True, orange_mode=True, explorative=True)
+        st_profile_report(pr, navbar=True)
+
+    with tab4:
+        st.write("tbd")
