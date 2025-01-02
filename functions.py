@@ -77,34 +77,34 @@ def scraping_refubium(link):
 
 
 
-    #col1, col2, col3 = st.columns([3, 1, 1])
-    #with col1:
-        #st.subheader("Title")
+    col1, col2, col3 = st.columns([3, 1, 1])
+    with col1:
+        st.subheader("Title")
     
-    #with col2:
-        #st.subheader("Format")
+    with col2:
+        st.subheader("Format")
 
-    #with col3:
-        #st.subheader("Action")
+    with col3:
+        st.subheader("Action")
 
-    #for index, row in df.iterrows():
-        #col1, col2, col3 = st.columns([3, 1, 1])
-        #with col1:
-            #st.write(row['Titel'])
+    for index, row in df.iterrows():
+        col1, col2, col3 = st.columns([3, 1, 1])
+        with col1:
+            st.write(row['Titel'])
             
-        #with col2:
-            #st.write(row['Format'])
+        with col2:
+            st.write(row['Format'])
 
-        #with col3:
-            #if st.button("Bearbeiten", type="primary", key=index-1):
-                #st.write(row['Link']) 
+        with col3:
+            if st.button("Bearbeiten", type="primary", key=index-1):
+                st.write(row['Link']) 
           
-       # with col4:
+        #with col4:
             #if st.button("Download", type="primary", key=index+index):
                 #st.write(row['Link']) 
         
         
                 
             
-        #st.divider()
+        st.divider()
     return df
