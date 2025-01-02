@@ -9,7 +9,7 @@ streamlit_ydata_profiling
 pygwalker
 bs4
 openpyxl
-#pybase64
+pybase64
 pathlib
 requests
-base64
+#base64
