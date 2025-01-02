@@ -73,5 +73,5 @@ if check_refubium in URL.lower():
     if datentyp != None:
       st.subheader(datentyp + " "+ "Analysis") 
 
-   if datentyp == "xlsx" or datentyp == "xls":
-      excel(hyperlink)
+    if datentyp == "xlsx" or datentyp == "xls":
+       excel(hyperlink)
