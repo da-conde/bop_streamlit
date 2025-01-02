@@ -8,4 +8,5 @@ streamlit_ydata_profiling
 #pygwalker.api.streamlit
 pygwalker
 bs4
+openpyxl
 #pybase64
