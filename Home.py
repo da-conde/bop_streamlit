@@ -78,5 +78,4 @@ if check_refubium in URL.lower():
       excel(hyperlink)
 
    elif datentyp == "txt":
-      st.write("Heeeeydd")
-      #txt(hyperlink)
+      txt(hyperlink)
