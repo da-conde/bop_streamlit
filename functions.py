@@ -203,8 +203,8 @@ def excel(link):
     with tab1: #Preview
         df = pd.read_excel(link) 
         st.dataframe(df)
-        new = files[['Header', 'Author', 'Year' , 'Abstract' , 'Department' , 'Language']].copy().transpose()
-        st.dataframe(new, hide_index=None)
+        #new = files[['Header', 'Author', 'Year' , 'Abstract' , 'Department' , 'Language']].copy().transpose()
+        #st.dataframe(new, hide_index=None)
 
     with tab2: #Visualization
         init_streamlit_comm()
