@@ -78,5 +78,8 @@ if check_refubium in URL.lower():
    if datentyp == "xlsx" or datentyp == "xls":
       excel(hyperlink)
 
+   if datentyp == "pdf":
+      pdf(hyperlink)
+
    elif datentyp == "txt":
       txt(hyperlink)
