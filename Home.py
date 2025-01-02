@@ -18,8 +18,6 @@ from bs4 import BeautifulSoup
 
 
 
-
-
 from functions import scraping_refubium
 from functions import scraping_deposit
 from functions import scraping_edoc
@@ -66,3 +64,14 @@ if check_refubium in URL.lower():
    file_section = st.selectbox(
         'Choose File',
         files.Titel.unique(),index=None)
+   
+   file_selected = files.loc[files['Titel'] == file_section]
+   if file_section != None:
+    hyperlink = file_selected["Link"].item()
+    datentyp = file_selected["Format"].item()
+
+    if datentyp != None:
+      st.subheader(datentyp + " "+ "Analysis") 
+
+   if datentyp == "xlsx" or datentyp == "xls":
+      excel(hyperlink)
