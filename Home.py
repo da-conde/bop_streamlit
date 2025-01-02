@@ -31,7 +31,7 @@ from functions import txt
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinalAAAND')
+st.title('Berlin Open Science PlatformNowFinal')
 
 st.divider()
 
