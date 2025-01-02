@@ -27,7 +27,7 @@ from functions import scraping_refubium
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinalAA')
+st.title('Berlin Open Science PlatformNowFinalAAAND')
 
 st.divider()
 
