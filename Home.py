@@ -24,6 +24,7 @@ from functions import scraping_edoc
 from functions import scraping_tu_repo
 from functions import csv
 from functions import excel
+from functions import txt
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -70,8 +71,11 @@ if check_refubium in URL.lower():
     hyperlink = file_selected["Link"].item()
     datentyp = file_selected["Format"].item()
 
-    if datentyp != None:
+   if datentyp != None:
       st.subheader(datentyp + " "+ "Analysis") 
 
-    if datentyp == "xlsx" or datentyp == "xls":
-       excel(hyperlink)
+   if datentyp == "xlsx" or datentyp == "xls":
+      excel(hyperlink)
+
+   elif datentyp == "txt":
+      txt(hyperlink)

@@ -222,3 +222,26 @@ def excel(link):
 
     with tab4:
         st.write("tbd")
+
+def txt(link):
+    tab1, tab2, tab3, tab4= st.tabs(["Preview", "Visualization", "Data Report", "Summary"])
+
+    with tab1: #Preview
+        df = pd.read_csv(link, sep='\s+', encoding = "ISO-8859-1")
+        st.dataframe(df) 
+    
+    with tab2: #Visualization
+        def get_pyg_renderer() -> "StreamlitRenderer":
+            df = pd.read_csv(link, sep='\s+', encoding = "ISO-8859-1")
+            return StreamlitRenderer(df, spec="./gw_config.json", debug=False)
+        renderer = get_pyg_renderer()
+        renderer.render_explore()
+
+    with tab3:
+        st.write("Profile report fehlt")
+        #df = pd.read_csv(link, sep='\s+', encoding = "ISO-8859-1")
+        #pr = ProfileReport(df, minimal=True, orange_mode=True, explorative=True)
+        #st_profile_report(pr, navbar=True)
+
+    with tab4:
+        st.write("tab4 tbd.")
