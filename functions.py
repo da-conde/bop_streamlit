@@ -13,8 +13,21 @@ from bs4 import BeautifulSoup
 import requests
 from pygwalker.api.streamlit import StreamlitRenderer, init_streamlit_comm
 from streamlit_ydata_profiling import st_profile_report
+import base64
 #from ydata_profiling import ProfileReport
 
+
+# Function to open and display PDF
+def displayPDF(file):
+     # Opening file from file path
+          with open(file, "rb") as f:
+               base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+     
+               pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+
+          
+     # Displaying File
+          st.markdown(pdf_display, unsafe_allow_html=True)
 
 
     #Refubium 

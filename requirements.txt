@@ -12,3 +12,4 @@ openpyxl
 #pybase64
 pathlib
 requests
+base64
