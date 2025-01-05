@@ -32,7 +32,7 @@ from functions import pdf
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinalX')
+st.title('Berlin Open Science PlatformNowFinal')
 
 st.divider()
 
@@ -83,3 +83,39 @@ if check_refubium in URL.lower():
 
    elif datentyp == "txt":
       txt(hyperlink)
+
+
+elif check_depositonce in URL.lower():
+   st.write("Depositonce")
+   files_deposit_once = scraping_deposit(URL)
+   file_section_deposit_one = st.selectbox(
+        'Choose File',
+        files_deposit_once.Titel.unique(),index=None)
+
+   file_selected = files_deposit_once.loc[files_deposit_once['Titel'] == file_section_deposit_one]
+   if file_section_deposit_one != None:
+    hyperlink = file_selected["Link"].item()
+    datentyp = file_selected["Format"].item()
+    #st.write(hyperlink)
+
+    if datentyp != None:
+        st.subheader(datentyp + " "+ "Analysis") 
+
+      #Depositonce
+        if datentyp == "pdf":
+         pdf(hyperlink)
+
+        elif datentyp == "csv":
+         csv(hyperlink)
+
+        elif datentyp == "txt":
+         txt(hyperlink)
+
+        elif datentyp == "mp4":
+         video(hyperlink)
+
+        elif datentyp == "xlsx" or datentyp == "xls":
+          excel(hyperlink)
+      
+        else:
+         st.write("Für den Datentyp" + " " + datentyp + " " + "steht noch keine Analyse zur Verfügung") 
