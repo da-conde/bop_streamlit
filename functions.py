@@ -319,3 +319,28 @@ def pdf(link):
                     #st.write(answers.choices[0].message.content)
                 #else:
                     #st.write("Hier kannst du ein LLM nutzen")
+
+def video(link):
+    tab1, tab2= st.tabs(["Video", "Visualization"])
+
+    with tab1: #Preview
+        from pathlib import Path
+        import requests
+        filename = Path('video.mp4')
+        url = link
+        response = requests.get(url)
+        filename.write_bytes(response.content)  
+
+
+
+        video_file = open("video.mp4", "rb")
+        video_bytes = video_file.read()
+        st.video(video_bytes)
+        #st.video("https://www.youtube.com/watch?v=M3kWoXyu-xQ")
+        #VIDEO_URL = "https://example.com/not-youtube.mp4"
+        #st.video(VIDEO_URL)
+        #st_player(link)
+        #st.video("https://example.com/not-youtube.mp4")
+
+    with tab2: #Preview
+        st.write("Tbd.")

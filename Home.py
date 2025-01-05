@@ -26,6 +26,7 @@ from functions import csv
 from functions import excel
 from functions import txt
 from functions import pdf
+from functions import video
 
 #st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -83,6 +84,9 @@ if check_refubium in URL.lower():
 
    if datentyp == "txt":
          txt(hyperlink)
+
+   elif datentyp == "mp4":
+      video(hyperlink)
 
    elif datentyp == "txt":
       txt(hyperlink)
