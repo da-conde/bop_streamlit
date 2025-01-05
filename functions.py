@@ -179,7 +179,7 @@ def csv(link):
     tab1, tab2, tab3, tab4= st.tabs(["Preview", "Visualization", "Data Report", "Summary"])
 
     with tab1: #Preview
-        df = pd.read_csv(link, delimiter=',', encoding = "ISO-8859-1", on_bad_lines='warn') 
+        df = pd.read_csv(link, delimiter=';', encoding = "ISO-8859-1", on_bad_lines='warn') 
         st.dataframe(df)
         #new = files[['Header', 'Author', 'Year' , 'Abstract' , 'Department' , 'Language']].copy().transpose()
         #st.dataframe(new, hide_index=None)
