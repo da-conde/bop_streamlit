@@ -32,7 +32,7 @@ from functions import pdf
 image = Image.open('bua.jpeg')
 st.image(image)
 
-st.title('Berlin Open Science PlatformNowFinal')
+st.title('Berlin Open Science PlatformNowFinalX')
 
 st.divider()
 
