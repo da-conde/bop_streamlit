@@ -321,7 +321,7 @@ def pdf(link):
                     #st.write("Hier kannst du ein LLM nutzen")
 
 def video(link):
-    tab1= st.tabs("Video")
+    tab1= st.tabs(["Video", "Visualization"])
 
     with tab1: #Preview
         from pathlib import Path
@@ -342,4 +342,5 @@ def video(link):
         #st_player(link)
         #st.video("https://example.com/not-youtube.mp4")
 
-    
+    with tab2: #Preview
+        st.write("Tbd.")
