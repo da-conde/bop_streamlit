@@ -81,6 +81,9 @@ if check_refubium in URL.lower():
    if datentyp == "pdf":
       pdf(hyperlink)
 
+   if datentyp == "txt":
+         txt(hyperlink)
+
    elif datentyp == "txt":
       txt(hyperlink)
 
